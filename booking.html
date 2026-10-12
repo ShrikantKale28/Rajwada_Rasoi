@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>Table Booking Form</title>
+<style>
+body {
+	font-size: 40px;
+	font-family: "Times New Roman", Times, serif;
+	background-color: #fffaf0;
+	padding: 40px;
+}
+form {
+	background-color: #ffffff;
+	padding: 30px;
+	border: 6px double #800020; 
+	border-radius: 4px;
+}
+h1{
+	font-family: "Times New Roman", Times, serif;
+	border:2px solid #d4af37;
+	padding:30px 0px 30px 0px;
+	color:#f3e5d8;
+	background:#5f0916;
+}
+h2 {
+	text-align: center;
+	color: #800020;
+	margin-top: 0;
+	margin-bottom: 25px;
+}
+table {
+	margin: 0 auto; 
+	border-collapse: separate;
+	border-spacing: 15px 10px;
+}
+td {
+	font-weight: bold;
+	color: #2c2520;
+	font-size: 16px;
+}
+input, select {
+		padding: 10px;
+		border: 1px solid; 
+		border-radius: 4px;
+		font-family: Arial, sans-serif;
+		font-size: 15px;
+}
+input[type="submit"] {
+		padding: 12px 25px;
+		background-color: #800020;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		font-size: 16px;
+		font-weight: bold;
+		font-family: "Times New Roman", Times, serif;
+		text-align: center;
+}
+a {
+	font-size: 24px;
+        color: #8B7500;
+        text-decoration: none; 
+}
+a:hover {
+        color: #B8860B; 
+}
+</style>
+</head>
+<body>
+<h1><center>Rajwada Rasoi</center></h1>
+<h2>Book Your Royal Table</h2>
+<form action="greeting_booking.html" method="GET">
+<table>
+        <tr>
+		<td>Email Address:</td>
+		<td><input type="email" name="user_email" required placeholder="example@email.com"></td>
+        </tr>
+
+        
+        <tr>
+		<td>Phone Number:</td>
+		<td><input type="number" name="user_phone" required placeholder="+91"></td>
+        </tr>
+
+
+        <tr>
+		<td>Number of People:</td>
+		<td>
+                <select name="total_guests" required>
+		<option value="" disabled selected>-- Choose size --</option>
+                <option value="2">Table for 2</option>
+                <option value="4">Table for 4</option>
+                <option value="8">Table for 8</option>
+                </select>
+                </td>
+	</tr>
+	
+
+	<tr>
+		<td>Select Date:</td>
+		<td><input type="date" name="booking_date" required></td>
+        </tr>
+
+        
+        <tr>
+		<td>Select Time Slot:</td>
+		<td><input type="time" name="booking_time" step="60" required></td>
+        </tr>
+
+    
+        <tr>
+		<td colspan="2"><input type="submit" value="Confirm Reservation"></td>
+        </tr>
+	
+</table><br>
+<a href="index.html"><center>← Back to Home Page</center></a>
+</form>
+
+</body>
+</html>

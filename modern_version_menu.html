@@ -1,0 +1,240 @@
+<html>
+<head>
+<title>Royal Rajasthan Menu</title>
+<style>
+#head{
+	font-size: 40px;
+	font-family: "Times New Roman", Times, serif;
+	border:2px solid #d4af37;
+	padding:30px 0px 30px 0px;
+	color:#f3e5d8;
+	background:#5f0916;
+}
+
+<style>
+	body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #fffaf0; 
+            padding: 40px;
+}
+table {
+	width: 520px;
+	margin: 0 auto;
+	background-color: #ffffff;
+	padding: 30px;
+	border: 6px double #800020; 
+	box-shadow: 0 0 15px rgba(128, 0, 32, 0.1);
+	border-collapse: collapse;
+}
+h1 {
+	text-align: center;
+	color: #800020; 
+	font-size: 28px;
+	letter-spacing: 2px;
+	margin: 10px 0 5px 0;
+	text-transform: uppercase;
+}
+h3 {
+	text-align: center;
+	font-weight: normal;
+	font-style: italic;
+	color: #d4af37; 
+	font-size: 18px;
+	margin: 0 0 30px 0;
+	letter-spacing: 1px;
+}
+tr {
+	border-bottom: 1px solid #f2e6d0;
+}
+td {
+	padding: 14px 5px;
+	font-size: 17px;
+	color: #2c2520;
+}
+td:last-child {
+		text-align: right;
+		font-weight: bold;
+		color: #800020;
+}
+i {
+	font-size: 13px;
+	color: #b57c1e;
+	font-weight: normal;
+}
+a {
+        font-size: 24px;
+        color: #8B7500;
+        text-decoration: none;
+}
+a:hover {
+        color: #B8860B; 
+}
+</style>
+<script>
+function getFieldValue(id) {
+				var val = parseInt(document.getElementById(id).value);
+				return isNaN(val) ? 0 : val;
+}
+function calculateTotal() {
+				var DAL = getFieldValue("dal_tot");
+				var LAAL = getFieldValue("laal_tot");
+            			var GHE = getFieldValue("ghe_tot");
+            			var GAT = getFieldValue("gat_tot");
+            			var KACH = getFieldValue("kach_tot");
+            			var PAN = getFieldValue("pan_tot");
+            			var RAM = getFieldValue("ram_tot");
+            			var KER = getFieldValue("ker_tot");
+            			var KHO = getFieldValue("kho_tot");
+           			var PUL = getFieldValue("pul_tot");
+           			var STEAM = getFieldValue("steam_tot");
+            			var LAS = getFieldValue("las_tot");
+				return DAL + LAAL + GHE + GAT + KACH + PAN + RAM + KER + KHO + PUL + STEAM + LAS;
+}
+function totalbill() {
+			document.getElementById("bill").value = calculateTotal();
+}
+function submitAndRedirect() {
+				var finalBill = calculateTotal();
+            			document.getElementById("bill").value = finalBill;
+            			window.location.href = "greeting_menu.html";
+}//
+function dal_rate() {
+			var Dal = document.getElementById("dal_qty").value;
+            		document.getElementById("dal_tot").value = Dal * 350;
+}
+function laal_rate() {
+			var Laal = document.getElementById("laal_qty").value;
+			document.getElementById("laal_tot").value = Laal * 600;
+}
+function ghe_rate() {
+			var Ghe = document.getElementById("ghe_qty").value;
+			document.getElementById("ghe_tot").value = Ghe * 720;
+}
+function gat_rate() {
+			var Gat = document.getElementById("gat_qty").value;
+            		document.getElementById("gat_tot").value = Gat * 250;
+}
+function kach_rate() {
+			var Kach = document.getElementById("kach_qty").value;
+            		document.getElementById("kach_tot").value = Kach * 45;
+}
+function pan_rate() {
+			var Pan = document.getElementById("pan_qty").value;
+            		document.getElementById("pan_tot").value = Pan * 350;
+}
+function ram_rate() {
+			var Ram = document.getElementById("ram_qty").value;
+            		document.getElementById("ram_tot").value = Ram * 900;
+}
+function ker_rate() {
+			var Ker = document.getElementById("ker_qty").value;
+            		document.getElementById("ker_tot").value = Ker * 250;
+}
+function kho_rate() {
+			var Kho = document.getElementById("kho_qty").value;
+            		document.getElementById("kho_tot").value = Kho * 30;
+}
+function pul_rate() {
+			var Pul = document.getElementById("pul_qty").value;
+			document.getElementById("pul_tot").value = Pul * 430;
+}
+function steam_rate() {
+				var Steam = document.getElementById("steam_qty").value;
+            			document.getElementById("steam_tot").value = Steam * 180;
+}
+function las_rate() {
+			var Las = document.getElementById("las_qty").value;
+            		document.getElementById("las_tot").value = Las * 70;
+}
+</script>
+</head>
+<body>
+<h1 id="head"><center>Rajwada Rasoi</center></h1>
+<table>
+	<tr>
+		<th colspan="4"> <!-- Changed to colspan 4 to fit the 4 columns -->
+                <h1>PADHARO MAHRA DES</h1>
+                <h3>The Royal Taste of Rajasthan</h3></th>
+        </tr>
+        <tr>
+		<td>Dal Baati Churma</td>
+            	<td>Rs. 350</td>
+            	<td><input type="number" id="dal_qty" onblur="dal_rate()"></td>
+            	<td><input type="number" id="dal_tot" disabled></td>
+        </tr>
+        <tr>
+            	<td>Laal Maas</td>
+            	<td>Rs. 600</td>
+            	<td><input type="number" id="laal_qty" onblur="laal_rate()"></td>
+            	<td><input type="number" id="laal_tot" disabled></td>
+        </tr>
+        <tr>
+            	<td>Malai Ghewar <i>(per Kg)</i></td>
+            	<td>Rs. 720</td>
+            	<td><input type="number" id="ghe_qty" onblur="ghe_rate()"></td>
+            	<td><input type="number" id="ghe_tot" disabled></td>
+        </tr>
+        <tr>
+            	<td>Gatte ki Sabzi</td>
+            	<td>Rs. 250</td>
+           	<td><input type="number" id="gat_qty" onblur="gat_rate()"></td>
+            	<td><input type="number" id="gat_tot" disabled></td>
+        </tr>
+	<tr>
+            	<td>Pyaz ki Kachori <i>(per Piece)</i></td>
+            	<td>Rs. 45</td>
+            	<td><input type="number" id="kach_qty" onblur="kach_rate()"></td>
+            	<td><input type="number" id="kach_tot" disabled></td>
+        </tr>
+        <tr>
+            	<td>Panchmel Dal</td>
+            	<td>Rs. 350</td>
+            	<td><input type="number" id="pan_qty" onblur="pan_rate()"></td>
+            	<td><input type="number" id="pan_tot" disabled></td>
+        </tr>
+        <tr>
+            	<td>Ram Rotla Malida Churma <i>(for 4 person)</i></td>
+            	<td>Rs. 900</td>
+            	<td><input type="number" id="ram_qty" onblur="ram_rate()"></td>
+            	<td><input type="number" id="ram_tot" disabled></td>
+        </tr>
+        <tr>
+            	<td>Ker Sangri</td>
+            	<td>Rs. 250</td>
+            	<td><input type="number" id="ker_qty" onblur="ker_rate()"></td>
+            	<td><input type="number" id="ker_tot" disabled></td>
+        </tr>
+        <tr>
+            	<td>Khoba Roti <i>(per Piece)</i></td>
+            	<td>Rs. 30</td>
+            	<td><input type="number" id="kho_qty" onblur="kho_rate()"></td>
+            	<td><input type="number" id="kho_tot" disabled></td>
+        </tr>
+        <tr>
+            	<td>Jodhpuri Kabuli Pulao</td>
+            	<td>Rs. 430</td>
+            	<td><input type="number" id="pul_qty" onblur="pul_rate()"></td>
+            	<td><input type="number" id="pul_tot" disabled></td>
+        </tr>
+        <tr>
+            	<td>Steamed Rice</td>
+            	<td>Rs. 180</td>
+           	<td><input type="number" id="steam_qty" onblur="steam_rate()"></td>
+            	<td><input type="number" id="steam_tot" disabled></td>
+        </tr>
+        <tr>
+            	<td>Kesar Lassi</td>
+            	<td>Rs. 70</td>
+            	<td><input type="number" id="las_qty" onblur="las_rate()"></td>
+            	<td><input type="number" id="las_tot" disabled></td>
+        </tr>
+        <tr>
+            	<td><input type="button" value="Calculate Bill" onClick="totalbill()"></td>
+            	<td ><center><input type="number" id="bill" disabled></center></td>
+            	<td colspan="2"><input type="submit" value="Submit" onClick="submitAndRedirect()"></td>
+        </tr>
+    </table>
+<br><br>    
+<a href="index.html"><center>← Back to Home Page</center></a>
+</body>
+</html>
